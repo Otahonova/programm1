@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+
+class MyBase {
+public:
+MyBase(int x) : baseValue(x) { // Инициализация в списке
+std::cout << "MyBase constructor вызван с размером " << baseValue << std::endl;
+}
+
+
+void show() const {
+std::cout << "Base value: " << baseValue << std::endl;
+}
+
+
+private:
+int baseValue;
+};
+
+
+class MyDeriv : public MyBase {
+public:
+MyDeriv(int x, const std::string& name) : MyBase(x), derivName(name) { // Инициализация базового класса
+std::cout << "MyDeriv constructor вызван с именем: " << derivName << std::endl;
+}
+
+
+void show() const {
+MyBase::show(); // Вызов метода базового класса
+std::cout << "полученное имя: " << derivName << std::endl;
+}
+
+
+private:
+std::string derivName;
+};
+
+
+int main() {
+MyDeriv obj(100, "DerivedObject");
+obj.show();
+
+
+return 0;
+}
