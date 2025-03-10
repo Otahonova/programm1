@@ -1,1 +1,37 @@
+#include <iostream>
+
+
+class B {
+public:
+B() { std::cout << "Объект B создан." << std::endl; }
+~B() { std::cout << "Объект B уничтожен." << std::endl; }
+void display() const { std::cout << "Метод класса B" << std::endl; }
+};
+
+
+class A {
+public:
+A() : b() { // Конструктор класса A создает объект B
+std::cout << "Объект A создан." << std::endl;
+}
+~A() { // Деструктор класса A автоматически уничтожает объект B
+std::cout << "Объект A уничтожен." << std::endl;
+}
+
+
+void useB() {
+b.display();
+}
+
+
+private:
+B b; // Объект класса B как член класса A
+};
+
+
+int main() {
+A a; // Создается объект A, который создает объект B
+a.useB(); // Вызов метода объекта B
+return 0;
+}
 
