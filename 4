@@ -1,0 +1,43 @@
+#include <iostream>
+
+
+// Базовый класс
+class Animal {
+public:
+void speak() {
+std::cout << "Животное разговаривает" << std::endl;
+}
+};
+
+
+// Класс-наследник Dog
+class Dog : public Animal {
+public:
+void speak() {
+std::cout << "Собака гавкает" << std::endl;
+}
+};
+
+
+// Класс-наследник Cat
+class Cat : public Animal { 
+public:
+void speak() {
+std::cout << "Кот мяукает" << std::endl;
+}
+};
+
+
+int main() {
+Animal animal; //ввод класс класс
+Dog dog; // ввод тип класса тип класса
+Cat cat; // ввод тип класса тип класса
+
+
+animal.speak(); //вывод
+dog.speak(); 
+cat.speak();
+
+
+return 0;
+}
