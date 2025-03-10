@@ -1,0 +1,35 @@
+#include <iostream>
+
+
+class Car {
+public:
+// Члены данных класса
+std::string brand;
+int year;
+
+
+// Конструктор без параметров
+Car() {
+brand = "Неизвестно";
+year = 0;
+}
+
+
+// Метод для вывода информации о машине
+void display() {
+std::cout << "Бренд: " << brand << ", Год выпуска: " << year << std::endl;
+}
+};
+
+
+int main() {
+// Создание объекта класса Car с использованием конструктора без параметров
+Car nCar;
+
+
+// Вывод информации о машине
+nCar.display(); // Вывод: Brand: Unknown, Year: 0
+
+
+return 0;
+}
