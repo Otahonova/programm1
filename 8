@@ -1,0 +1,36 @@
+		#include <iostream>
+		
+
+		class MyClass {
+		public:
+		MyClass() { std::cout << "MyClass Constructor\n"; }
+		~MyClass() { std::cout << "MyClass Destructor\n"; }
+		};
+		
+
+		void createStaticObject() {
+		MyClass obj; // Статически созданный объект
+		} // Объект будет уничтожен при выходе из области видимости
+		
+
+		int main() {
+		createStaticObject(); // Вызов функции
+		return 0;
+		}
+		Уничтожение динамически созданных объектов
+		#include <iostream>
+		
+
+		class MyClass {
+		public:
+		MyClass() { std::cout << "MyClass Constructor\n"; }
+		~MyClass() { std::cout << "MyClass Destructor\n"; }
+		};
+		
+
+		int main() {
+		MyClass* obj = new MyClass(); // Динамически созданный объект
+		delete obj; // Уничтожение объекта
+		return 0;
+		}
+
