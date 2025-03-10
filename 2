@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+
+class Person {
+private:
+std::string name;
+int age;
+
+
+public:
+// Конструктор с параметрами
+Person(const std::string& n, int a) : name(n), age(a) {
+std::cout << "Конструктор вызван для " << name << std::endl;
+}
+
+
+// Деструктор
+~Person() {
+std::cout << "Деструктор вызван для " << name << std::endl;
+}
+
+
+// Метод для отображения информации о человеке
+void display() const {
+std::cout << "ИМЯ: " << name << ", Возраст: " << age << std::endl;
+}
+};
+
+
+int main() {
+// Создание объекта класса Person
+Person person1("Aнна", 30);
+person1.display();
+
+
+{
+// Создание объекта внутри блока
+// вызов методов и атрибутов
+Person person2("Сергей", 25);
+person2.display();
+} // person2 будет уничтожен здесь
+
+
+return 0;
+}
