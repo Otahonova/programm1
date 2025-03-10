@@ -1,0 +1,35 @@
+#include <iostream>
+
+
+class Point {
+public:
+double x;
+double y;
+
+
+// Метод для вывода координат
+void printCoordinates() const {
+std::cout << "x: " << x << ", y: " << y << std::endl;
+}
+};
+int main() {
+// Статическое создание
+Point p1;
+p1.x = 10;
+p1.y = 11;
+p1.printCoordinates();
+
+
+// Динамическое создание
+Point* p2 = new Point();
+p2->x = 3.14; // Доступ к членам через -> для указателя
+p2->y = 45;
+p2->printCoordinates();
+
+
+// Обязательно удаляем динамически созданный объект!
+delete p2;
+
+
+return 0;
+}
